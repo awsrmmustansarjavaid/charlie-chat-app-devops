@@ -78,6 +78,64 @@ chat-app-devops/
 aws configure
 ```
 
+### Enter:
+
+```
+Access Key
+Secret Key
+Region (example: ap-south-1)
+Output: json
+```
+
+### 🧱 Phase 1 — Build WebSocket Chat App (Node.js)
+
+### Step 1: Create project
+
+```
+mkdir chat-app && cd chat-app
+npm init -y
+npm install ws express
+```
+
+### Step 2: Create server.js
+
+```
+const express = require("express");
+const http = require("http");
+const WebSocket = require("ws");
+
+const app = express();
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ server });
+
+let clients = [];
+
+wss.on("connection", (ws) => {
+    clients.push(ws);
+
+    ws.on("message", (message) => {
+        clients.forEach(client => {
+            if (client !== ws && client.readyState === WebSocket.OPEN) {
+                client.send(message.toString());
+            }
+        });
+    });
+
+    ws.on("close", () => {
+        clients = clients.filter(c => c !== ws);
+    });
+});
+
+app.get("/", (req, res) => {
+    res.send("WebSocket Chat Server Running");
+});
+
+server.listen(3000, () => {
+    console.log("Server running on port 3000");
+});
+```
+
+
 
 
 
