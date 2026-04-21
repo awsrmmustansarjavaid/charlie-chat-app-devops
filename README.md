@@ -24,6 +24,60 @@ By the end, you will:
 
 - Use Bash scripts for automation
 
+### 📁 GitHub Repo Structure (Clean & Professional)
+
+```
+chat-app-devops/
+│
+├── app/
+│   ├── server.js
+│   ├── package.json
+│
+├── nginx/
+│   └── nginx.conf
+│
+├── docker/
+│   ├── Dockerfile
+│   └── docker-compose.yml
+│
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+│
+├── scripts/
+│   └── deploy.sh
+│
+├── k8s/              # optional (advanced phase)
+│   ├── deployment.yaml
+│   ├── service.yaml
+│
+└── README.md
+```
+
+### ⚙️ Phase 0 — Prerequisites
+
+### Install locally:
+
+- Node.js (v18+)
+
+- Docker
+
+- Git
+
+- AWS CLI
+
+### Create accounts:
+
+- AWS account (free tier)
+
+### GitHub account
+
+🔐 Configure AWS CLI
+
+```
+aws configure
+```
+
 
 
 
