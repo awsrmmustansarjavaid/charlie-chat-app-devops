@@ -236,4 +236,46 @@ chat-app-devops/
 └── README.md
 ```
 
+### 🚀 Advanced Add-ons (Highly Recommended)
+
+Add these to make your lab stand out professionally:
+
+#### 🔐 Security
+
+- AWS Secrets Manager (for env vars)
+
+- HTTPS with ACM
+
+#### 📊 Monitoring
+
+- CloudWatch logs
+
+- Metrics alarms
+
+#### 🌐 CDN
+
+- Amazon CloudFront
+
+#### ⚠️ Reality Check (Important)
+
+- Kubernetes + ECS together = overkill
+→ Use Kubernetes later (Phase 2 lab)
+
+- Start with ECS → then move to EKS later
+
+### 🧠 What This Lab Actually Teaches You
+
+You’re not just “deploying an app” — you’re learning:
+
+- Real-time systems (WebSocket)
+
+- Reverse proxy (Nginx)
+
+- Containerization (Docker)
+
+- CI/CD pipelines
+
+- Deployment strategies (Blue/Green, Canary)
+
+- Cloud architecture thinking
 
